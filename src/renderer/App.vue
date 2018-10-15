@@ -116,10 +116,25 @@
 
       window.ondragstart = () => { return false } // Disable drag
       ipcRenderer.send('app-ready') // App ready
+      ipcRenderer.on('change-load', (event, load) => {
+        if (load) {
+          document.getElementsByTagName('body')[0].classList.add('app-load')
+        } else {
+          document.getElementsByTagName('body')[0].classList.remove('app-load')
+        }
+      })
     },
   }
 </script>
 
 <style lang="scss">
   @import "assets/scss/theme";
+
+  // Loading
+  body.app-load {
+    cursor: progress !important;
+    .cursor {
+      cursor: progress !important;
+    }
+  }
 </style>

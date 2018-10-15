@@ -20,6 +20,7 @@ class Updater {
     this._mainWindow = null
     this._webcontent = null
     this._percent = 0
+    this._loading = false
   }
 
   /**
@@ -68,10 +69,7 @@ class Updater {
   check = (silent) => {
     console.log('[UPDATE] Check...')
     this._silent = silent
-    this.available({
-      version: '1.1.1',
-      releaseNotes: ['11', '22222'],
-    })
+    this.changeWindowCursor(true)
     autoUpdater.checkForUpdates()
   }
 
@@ -81,6 +79,7 @@ class Updater {
    */
   available = (infos) => {
     console.log('[UPDATE] Available : ', infos.version)
+    this.changeWindowCursor(false)
 
     // Notification
     let notif = new Notification({
@@ -99,7 +98,6 @@ class Updater {
       skipTaskbar: false,
     })
     modal.on('show', (e) => {
-      console.log('show', e)
       modal.webContents.send('list-releases', infos.releaseNotes)
     })
   }
@@ -110,6 +108,7 @@ class Updater {
    */
   noUpdate = (infos) => {
     console.log('[UPDATE] App is up-to-date')
+    this.changeWindowCursor(false)
     if (!this._silent) {
       dialog.showMessageBox(this._mainWindow, {
         type: 'info',
@@ -127,6 +126,7 @@ class Updater {
   progress = (infos) => {
     let percent = Math.round(infos.percent)
     this._mainWindow.setProgressBar(percent / 100)
+    this.changeWindowCursor(true)
     if (this._percent !== percent) {
       this._mainWindow.setTitle(`CodeChecker - Téléchargement : ${percent}%`)
       this._percent = percent
@@ -145,6 +145,7 @@ class Updater {
   downloaded = (event, releaseNotes, releaseName) => {
     console.log('[UPDATE] Release was downloaded')
     this._mainWindow.setTitle('CodeChecker')
+    this.changeWindowCursor(true)
     if (this._webcontent) {
       this._webcontent.send('start-install', true)
     }
@@ -159,8 +160,20 @@ class Updater {
    */
   error = (error) => {
     console.error('[UPDATE] Error', error)
+    this.changeWindowCursor(false)
     if (!this._silent) {
       dialog.showErrorBox('Mise à jour', 'Impossible de vérifier les mises à jour !')
+    }
+  }
+
+  /**
+   * Change cursor in mainWindow if loading
+   * @param {Boolean} loading
+   */
+  changeWindowCursor = (loading) => {
+    if (!this._silent && loading !== this._loading) {
+      this._mainWindow.webContents.send('change-load', loading)
+      this._loading = loading
     }
   }
 }

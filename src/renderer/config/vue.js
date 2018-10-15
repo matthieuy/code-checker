@@ -38,3 +38,14 @@ Vue.filter('formatDate', (value, format) => {
   let date = moment(value)
   return (date.isValid()) ? 'le ' + date.format(format) : ''
 })
+
+Vue.filter('size', (value) => {
+  let i = -1
+  let byteUnits = [' Kb', ' Mb', ' Gb', ' Tb']
+  do {
+    value = value / 1024
+    i++
+  } while (value > 1024)
+
+  return Math.max(value, 0.1).toFixed(1) + byteUnits[i]
+})
