@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import "vars";
+
+// Font Awesome
+@import "fa";
+
+// Photon
+@import "photon/global";
+@import "photon/toolbar";
+@import "photon/buttons";
+@import "photon/form";
+@import "photon/pane";
+@import "photon/list";
+@import "photon/media";
+@import "photon/table";
+@import "photon/tabs";
+
+// Personal
+@import "scrollbar";
+@import "context-menu";
+@import "tooltip";
+
+.vam {
+  vertical-align: middle;
+}
+.detect-window .nav-group-item {
+  cursor: default;
+  .btn-action .fa {
+    font-size: 11px;
+    margin-top: 0;
+    line-height: 14px;
+  }
+}

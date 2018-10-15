@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<ruleset name="PHPMD rule set"
+ xmlns="http://pmd.sf.net/ruleset/1.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+ xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd"
+  >
+    <description>PHPMD rule set</description>
+
+    <!-- Cleancode -->
+    <rule ref="rulesets/cleancode.xml/ElseExpression" message='La méthode "{0}" utilise l&apos;expression "else" qui n&apos;est pas nécessaire. Vous pouvez simplifier le code' />
+
+    <!-- Codesize -->
+    <rule ref="rulesets/codesize.xml/CyclomaticComplexity" message='La fonction "{1}()" a une complexité cyclomatique de {2}. Il faudrait la réduire en dessous de {3}'>
+      <properties>
+        <property name="reportLevel" value="10" />
+      </properties>
+    </rule>
+    <rule ref="rulesets/codesize.xml/NPathComplexity" message='"{0} {1}()" a une complexité Npath de {2}. Il faudrait simplifier l&apos;algo pour être en dessous de {3}' />
+    <rule ref="rulesets/codesize.xml/ExcessiveMethodLength" message='La fonction "{1}()" contient {2} lignes. Evitez les méthodes de plus de {3} lignes'>
+      <properties>
+        <property name="minimum" value="50" />
+      </properties>
+    </rule>
+    <rule ref="rulesets/codesize.xml/ExcessiveClassLength" message='La classe "{0}" contient {1} lignes de code. Evitez les classes de plus de {2} lignes' />
+    <rule ref="rulesets/codesize.xml/ExcessiveParameterList" message='La fonction "{1}()" a {2} paramètres. Evitez les fonctions avec plus de {3} paramètres'>
+      <properties>
+        <property name="minmum" value="6" />
+      </properties>
+    </rule>
+    <rule ref="rulesets/codesize.xml/ExcessivePublicCount" message='"{0} {1}" a {2} méthodes et attributs publique. Evitez de dépasser les {3}.'/>
+    <rule ref="rulesets/codesize.xml/TooManyFields" message='"{0} {1}" a {2} champs. Evitez de dépasser les {3}.'>
+      <properties>
+        <property name="maxfields" value="20" />
+      </properties>
+    </rule>
+    <rule ref="rulesets/codesize.xml/TooManyMethods" message='"{0} {1}" a {2} méthodes (hormis getters/setters). Evitez de dépasser les {3}.' />
+    <rule ref="rulesets/codesize.xml/TooManyPublicMethods" message='"{0} {1}" a {2} méthodes publique. Evitez de dépasser les {3}.'/>
+    <rule ref="rulesets/codesize.xml/ExcessiveClassComplexity" message='La classe "{0}" a une complexité (fonction poids) de {1}. Evitez de dépasser les {2} pour une meilleur maintenabilité'>
+      <properties>
+        <property name="maximum" value="50" />
+      </properties>
+    </rule>
+
+    <!-- Controversial -->
+    <rule ref="rulesets/controversial.xml/Superglobals" message='"{0}" accède a la variable super-global "{1}". Ces variables devraient être encapsulées dans un objet (comme dans les frameworks PHP)' />
+    <rule ref="rulesets/controversial.xml/CamelCaseClassName" message='Le nom de la classe "{0}" n&apos;est pas au format CamelCase' />
+    <rule ref="rulesets/controversial.xml/CamelCasePropertyName" message='La propriété "{0}" n&apos;est pas au format CamelCase' />
+    <rule ref="rulesets/controversial.xml/CamelCaseMethodName" message='La méthode "{0}" n&apos;est pas au format CamelCase' />
+    <rule ref="rulesets/controversial.xml/CamelCaseParameterName" message='Le paramètre "{0}" n&apos;est pas au format CamelCase' />
+    <rule ref="rulesets/controversial.xml/CamelCaseVariableName" message='La variable "{0}" n&apos;est pas au format CamelCase' />
+
+    <!-- Design -->
+    <rule ref="rulesets/design.xml/ExitExpression" message='"{0} {1}()" contient "exit()" qui est a éviter. Utilisez plutôt des exceptions' />
+    <rule ref="rulesets/design.xml/EvalExpression" message='"{0} {1}()" contient "eval()" qui représente des risques de sécurité' />
+    <rule ref="rulesets/design.xml/GotoStatement" message='"{0} {1}()" contient "goto()" qui est difficile à lire. Utilisez plutôt des conditions et la POO' />
+    <rule ref="rulesets/design.xml/NumberOfChildren" message='"{0} {1}" a {2} enfants. Pensez à refaire la hiérachie pour rester en dessous de {3} enfants' />
+    <rule ref="rulesets/design.xml/DepthOfInheritance" message='"{0} {1}" a {2} parents. Pensez à revoir la hiérachie des classes pour rester en dessous de {3} parents' />
+    <rule ref="rulesets/design.xml/CouplingBetweenObjects" message='La classe "{0}" dépends de {1} objets. Pensez à réduire les dépendances en dessous de {2}'>
+      <properties>
+        <property name="minimum" value="20" />
+      </properties>
+    </rule>
+    <rule ref="rulesets/design.xml/DevelopmentCodeFragment" message='"{0} {1}()" fait appel a la fonction de débug "{2}()" qui doit être utilisée uniquement durant le développement' />
+
+    <!-- Naming -->
+    <rule ref="rulesets/naming.xml/ShortVariable" message='Evitez les noms de variable trop court comme "{0}"'>
+      <properties>
+        <property name="exceptions" value="id,em" />
+      </properties>
+    </rule>
+    <rule ref="rulesets/naming.xml/LongVariable" message='Evitez les noms de variable trop long comme "{0}"' />
+    <rule ref="rulesets/naming.xml/ShortMethodName" message='Evitez les noms de méthode trop court comme "{0}::{1}()"' />
+    <rule ref="rulesets/naming.xml/ConstructorWithNameAsEnclosingClass" message='La classe ne doit pas avoir une méthode qui porte le même nom. Utilisez plutôt "__constructor()"' />
+    <rule ref="rulesets/naming.xml/ConstantNamingConventions" message='Les constantes de classe/interfaces doivent être en majuscule' />
+    <rule ref="rulesets/naming.xml/BooleanGetMethodName" message='La méthode "{0}()" qui retourne un boolean devrait se nommer "is...()" ou "has...()"' />
+
+    <!-- Unused code -->
+    <rule ref="rulesets/unusedcode.xml/UnusedPrivateField" message='Champ privé non utilisé : "{0}"' />
+    <rule ref="rulesets/unusedcode.xml/UnusedLocalVariable" message='Variable locale non utilisée : "{0}"' />
+    <rule ref="rulesets/unusedcode.xml/UnusedPrivateMethod" message='Méthode privée non utilisée : "{0}"' />
+    <rule ref="rulesets/unusedcode.xml/UnusedFormalParameter" message='Paramètre non utilisé : "{0}"' />
+</ruleset>

@@ -1,0 +1,4 @@
+owner: matthieuy
+repo: code-checker
+provider: github
+vPrefixedTagName: true

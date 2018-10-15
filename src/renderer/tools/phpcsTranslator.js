@@ -1,0 +1,70 @@
+const replaceString = {
+  '..Symfony2_Sniffs_WhiteSpace_CommaSpacing.Invalid': ['Add a single space after each comma delimiter', 'Ajoutez un espace après chaque virgule'],
+  'PEAR.Commenting.FunctionComment.Missing': [/Missing doc comment for function (.*)/, 'Documentation manquante pour la fonction "$1"'],
+  'PEAR.Commenting.FunctionComment.ExtraParamComment': ['Superfluous parameter comment', 'Commentaire de paramètre superflu'],
+  '..PersonalRules_Sniffs_Commenting_FunctionComment.SpacingAfterParamType': [/Expected ([0-9]+) spaces after parameter type; ([0-9]+) found/, '$1 espace attendu après le type de paramètre et $2 trouvé'],
+  '..PersonalRules_Sniffs_Commenting_FunctionComment.SpacingAfterParamName': [/Expected ([0-9]+) spaces after parameter name; ([0-9]+) found/, '$1 espace attendu après le type de paramètre et $2 trouvé'],
+  '..PersonalRules_Sniffs_Commenting_FunctionComment.MissingReturn': ['Missing @return tag in function comment', 'Il manque le tag "@return" dans le commentaire de la fonction'],
+  '..PersonalRules_Sniffs_Commenting_FunctionComment.Missing': [/Missing doc comment for function (.*)/, 'Documentation manquante pour la fonction "$1"'],
+  'Generic.WhiteSpace.ScopeIndent.IncorrectExact': [/Line indented incorrectly; expected ([0-9]+) spaces, found ([0-9]+)/, 'Indentation incorrecte : $2 espaces au lieu de $1'],
+  'Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine': ['Opening brace should be on a new line', 'L\'ouverture d\'accolade doit être sur une nouvelle ligne'],
+  'PSR12.Operators.OperatorSpacing.NoSpaceBefore': [/Expected at least ([0-9]+) space before "(.*)"; ([0-9]+) found/, '$1 espace attendu avant "$2" et $3 trouvé'],
+  'PSR12.Operators.OperatorSpacing.NoSpaceAfter': [/Expected at least ([0-9]+) space after "(.*)"; ([0-9]+) found/, '$1 espace attendu après "$2" et $3 trouvé'],
+  'PSR2.Namespaces.NamespaceDeclaration.BlankLineAfter': ['There must be one blank line after the namespace declaration', 'Il doit avoir une ligne vide après la déclaration du namespace'],
+  'PSR2.Classes.ClassDeclaration.CloseBraceAfterBody': ['The closing brace for the class must go on the next line after the body', 'L\'accolade de fermeture d\'une classe doit être sur la ligne qui suit le corps'],
+  'PSR2.Files.EndFileNewline.NoneFound': [/Expected ([0-9]+) newline at end of file; ([0-9]+) found/, 'Le fichier doit finir par $1 ligne vide et $2 trouvé'],
+  'PSR2.Files.EndFileNewline.TooMany': [/Expected ([0-9]+) blank line at end of file; ([0-9]+) found/, 'Le fichier doit finir par $1 ligne vide et $2 trouvé'],
+  'PSR2.Methods.FunctionClosingBrace.SpacingBeforeClose': [/Function closing brace must go on the next line following the body; found ([0-9]+) blank lines before brace/, 'L\'accolade de fermeture d\'une fonction doit être sur la ligne qui suit le corps. $1 ligne vide trouvée'],
+  'Generic.WhiteSpace.DisallowTabIndent.TabsUsed': ['Spaces must be used to indent lines; tabs are not allowed', 'Utilisez des espaces pour indenter et non des tabulations'],
+  'PEAR.Commenting.FunctionComment.MissingParamTag': [/Doc comment for parameter "\$(\w+)" missing/, 'Documentation du paramètre "$$$1" manquante'],
+  'PEAR.Commenting.FunctionComment.ParamNameNoMatch': [/Doc comment for parameter \$(\w+) does not match actual variable name \$(\w+)/, 'La documentation pour le paramétre "$$$1" ne correspond pas à la variable "$$$2"'],
+  'Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword': [/Expected ([0-9]+) space\(s\) after (\w+) keyword; ([0-9]+) found/, '$1 espace attendu après le mot-clé "$2" et $3 trouvé'],
+  'PEAR.ControlStructures.MultiLineCondition.SpaceBeforeOpenBrace': [/There must be a single space between the closing parenthesis and the opening brace of a multi-line (\w+) statement; found ([0-9]+) spaces/, 'Il doit avoir un seul espace entre la fermeture de parenthèse et l\'ouverture d\'accolade pour le mot-clé "$1", $2 espaces trouvés'],
+  'PEAR.ControlStructures.MultiLineCondition.NewlineBeforeOpenBrace': [/There must be a single space between the closing parenthesis and the opening brace of a multi-line (\w+) statement; found newline/, 'Il doit avoir un seul espace entre la fermeture de parenthèse et l\'ouverture d\'accolade pour le mot-clé "$1", ligne vide trouvée'],
+  'Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace': [/Expected ([0-9]+) space after closing brace; (.*) found/, '$1 espace attendu après la fermeture d\'accolade et $2 trouvé'],
+  'PSR2.Methods.FunctionCallSignature.ContentAfterOpenBracket': ['Opening parenthesis of a multi-line function call must be the last content on the line', 'La parenthèse d\'ouverture d\'une fonction multi-ligne doit être le dernier élément de la ligne'],
+  'PSR2.Methods.FunctionCallSignature.Indent': [/Multi-line function call not indented correctly; expected ([0-9]+) spaces but found ([0-9]+)/, 'La fonction multi-ligne n\'est pas indenté correctement : $1 espaces attendus et $2 trouvés'],
+  'PSR2.Methods.FunctionCallSignature.CloseBracketLine': ['Closing parenthesis of a multi-line function call must be on a line by itself', 'La parenthèse d\'une fonction multi-ligne doit être sur une seul ligne'],
+  'PEAR.Functions.FunctionCallSignature.OpeningIndent': [/Opening statement of multi-line function call not indented correctly; expected ([0-9]+) spaces but found ([0-9]+)/, 'Fonction multi-ligne mal indenté : $1 espaces attendus et $2 trouvés'],
+  'Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpen': ['Blank line found at start of control structure', 'Une ligne vide a été trouvé au début du bloc de contrôle'],
+  'Squiz.WhiteSpace.ControlStructureSpacing.SpacingBeforeClose': ['Blank line found at end of control structure', 'Une ligne vide a été trouvé à la fin du bloc de contrôle'],
+  'Generic.Files.LineLength.TooLong': [/Line exceeds ([0-9]+) characters; contains ([0-9]+) characters/, 'La ligne dépasse les $1 caractères, elle en contient $2'],
+  'PEAR.Commenting.FunctionComment.MissingParamName': ['Missing parameter name', 'Nom du paramètre manquant'],
+  'Generic.CodeAnalysis.EmptyStatement.DetectedElse': [/Empty (\w+) statement detected/, 'Bloc "$1" vide détecté'],
+  'Squiz.Functions.FunctionDeclarationArgumentSpacing.NoSpaceBeforeHint': [/Expected ([0-9]+) space between comma and type hint "(\w+)"; ([0-9]+) found/, '$1 espace attendu entre la virgule et le type "$2", $3 espace trouvé'],
+  'PSR2.Methods.FunctionCallSignature.MultipleArguments': ['Only one argument is allowed per line in a multi-line function call', 'Un seul argument par ligne est autorisé lors d\'un appel de fonction multi-ligne'],
+  'Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma': ['No space found after comma in function call', 'Aucun espace trouvé après la virgule dans l\'appel de fonction'],
+  'Squiz.WhiteSpace.SemicolonSpacing.Incorrect': [/Space found before semicolon; expected "(.*)" but found "(.*)"/, 'Espace trouvé avant le point-virgule. Syntaxe attendu : "$1" à la place de "$2"'],
+  'PEAR.Commenting.FunctionComment.SpacingAfter': ['There must be no blank lines after the function comment', 'Il ne doit pas avoir de ligne vide après les commentaires de la fonction'],
+  'Squiz.Commenting.DocCommentAlignment.NoSpaceAfterStar': [/Expected ([0-9]+) space after asterisk; ([0-9]+) found/, 'Il doit avoir $1 espace après l\'astérisque et $2 trouvé'],
+  'Squiz.Commenting.DocCommentAlignment.SpaceBeforeStar': [/Expected ([0-9]+) space(s) before asterisk; ([0-9]+) found/, 'Il doit avoir $1 espace après l\'astérisque et $2 trouvé'],
+  'Squiz.Scope.MethodScope.Missing': [/Visibility must be declared on method "(.*)"/, 'La visibilité de la méthode "$1" doit être déclarée'],
+  'Squiz.WhiteSpace.LanguageConstructSpacing.Incorrect': [/Language constructs must be followed by a single space; expected "(.*)" but found "(.*)"/, 'Les fonctions constructives doivent être suivi d\'un espace. Syntaxe attendu "$1" à la place de "$2"'],
+  'Squiz.WhiteSpace.ScopeClosingBrace.Indent': [/Closing brace indented incorrectly; expected ([0-9]+) spaces, found ([0-9]+)/, 'L\'accolade de fermeture est mal indentée. $1 espaces attendu et $2 trouvés'],
+  'PSR1.Methods.CamelCapsMethodName.NotCamelCaps': [/Method name "(.*)" is not in camel caps format/, 'Le nom de la méthode "$1" n\'est pas au format lower camel case'],
+  'PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse': [/There must be one blank line after the last USE statement; ([0-9]+) found;/, 'Il doit avoir 1 ligne vide après le dernier "USE" alors que $1 trouvées'],
+  'PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace': [/Expected ([0-9]+) spaces after opening bracket; ([0-9]+) found/, '$1 espace attendu après l\'accolade d\'ouverture et $2 trouvé'],
+  'Generic.WhiteSpace.ScopeIndent.Incorrect': [/Line indented incorrectly; expected at least ([0-9]+) spaces, found ([0-9]+)/, 'Indentation incorrecte : $1 espaces attendu alors que $2 trouvés'],
+  'Squiz.WhiteSpace.ScopeKeywordSpacing.Incorrect': [/Scope keyword "(\w+)" must be followed by a single space; found ([0-9]+)/, 'Le mot "$1" doit être suivi d\'un seul espace alors que $2 trouvés'],
+  'Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterOpen': [/Expected 0 spaces after opening parenthesis; 1 found/, ''],
+  'Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceBeforeEquals': [/Incorrect spacing between argument "(.*)" and equals sign; expected ([0-9]+) but found ([0-9]+)/, 'Nombre d\'espace incorrect entre l\'arguement "$1" et le signe égale : $3 trouvé à la place de $2 attendu'],
+  'Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceAfterDefault': [/Incorrect spacing between default value and equals sign for argument "(.*)"; expected ([0-9]+) but found ([0-9]+)/, 'Nombre d\'espace incorrect entre la valeur par défaut et le signe égale du paramètre "$1" : $3 trouvé à la place de $2 attendu'],
+  'Squiz.Functions.MultiLineFunctionDeclaration.BraceIndent': [/Opening brace indented incorrectly; expected ([0-9]+) spaces, found ([0-9]+)/, 'Indentation de l\'accolade d\'ouverture incorrecte : $2 espace trouvé au lieu de $1'],
+  'Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterFunction': [/Expected ([0-9]+) space after (\w+) keyword; ([0-9]+) found/, '$1 espace attendu après le mot "$2", $3 trouvés'],
+  'Generic.CodeAnalysis.UselessOverridingMethod.Found': [/Possible useless method overriding detected/, 'Méthode surchargée de manière probablement inutile'],
+  'PEAR.Functions.ValidDefaultValue.NotAtEnd': [/Arguments with default values must be at the end of the argument list/, 'Les arguments avec une valeur par défaut doivent être à la fin de la liste d\'argument'],
+  'Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingBeforeClose': [/Expected ([0-9]+) spaces before closing parenthesis; ([0-9]+) found/, '$1 espace attendu avant la parenthèse de fermeture, $2 trouvé'],
+  'Generic.PHP.LowerCaseType.ReturnTypeFound': [/PHP return type declarations must be lowercase; expected "(.*)" but found "(.*)"/, 'Le type de retour doit être en minuscule. "$1" attendu à la place de "$2"'],
+  'Zend.NamingConventions.ValidVariableName.NotCamelCaps': [/Variable "(.*)" is not in valid camel caps format/, 'Le nom de la variable "$1" ne respect pas le format camelCase'],
+}
+
+export default (source, message) => {
+  if (typeof replaceString[source] === 'undefined') {
+    console.log(source, message)
+  } else {
+    message = message.replace(replaceString[source][0], replaceString[source][1])
+    // return ''
+  }
+
+  return message
+}

@@ -1,0 +1,19 @@
+dist/electron/*
+dist/web/*
+build/*
+!build/icons
+!build/build.sh
+node_modules/
+npm-debug.log
+npm-debug.log.*
+old/
+thumbs.db
+yarn-error.log
+!.gitkeep
+
+# Codechecker.phar
+static/codechecker.phar
+!build/codechecker
+build/codechecker/phar/vendor
+build/codechecker/codechecker.phar
+build/codechecker/phar/.idea

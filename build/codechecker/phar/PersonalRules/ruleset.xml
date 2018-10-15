@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<ruleset name="PersonalRules">
+    <description>Personnal rules for CS</description>
+
+    <!-- Path to exclude -->
+    <exclude-pattern>*/Resources/*</exclude-pattern>
+    <exclude-pattern>*/assets/*</exclude-pattern>
+    <exclude-pattern>Kernel.php</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+
+    <!-- PSR -->
+    <rule ref="PSR1" />
+    <rule ref="PSR2" />
+    <rule ref="PSR12" />
+
+    <rule ref="Generic.CodeAnalysis.EmptyStatement" />
+    <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop" />
+    <rule ref="Generic.CodeAnalysis.JumbledIncrementer" />
+    <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement" />
+    <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier" />
+    <rule ref="Generic.CodeAnalysis.UselessOverridingMethod" />
+    <rule ref="Generic.ControlStructures.InlineControlStructure" />
+    <rule ref="Generic.Files.LineEndings" />
+    <rule ref="Generic.Files.LineEndings.InvalidEOLChar"><severity>0</severity></rule>
+    <rule ref="Generic.Files.OneClassPerFile" />
+    <rule ref="Generic.Files.OneInterfacePerFile" />
+    <rule ref="Generic.Formatting.DisallowMultipleStatements" />
+    <rule ref="Generic.Formatting.SpaceAfterCast" />
+    <rule ref="Generic.Functions.CallTimePassByReference" />
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing" />
+    <!--
+    <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman" />
+    -->
+    <rule ref="Generic.NamingConventions.CamelCapsFunctionName" />
+    <rule ref="Generic.NamingConventions.ConstructorName" />
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName" />
+    <rule ref="Generic.NamingConventions.CamelCapsFunctionName.ScopeNotCamelCaps"><severity>0</severity></rule>
+    <rule ref="Generic.PHP.DeprecatedFunctions" />
+    <rule ref="Generic.PHP.DisallowAlternativePHPTags" />
+    <rule ref="Generic.PHP.DiscourageGoto" />
+    <rule ref="Generic.PHP.ForbiddenFunctions" />
+    <rule ref="Generic.PHP.LowerCaseConstant" />
+    <rule ref="Generic.PHP.LowerCaseKeyword" />
+    <rule ref="Generic.PHP.LowerCaseType" />
+    <rule ref="Generic.PHP.SAPIUsage" />
+    <rule ref="Generic.WhiteSpace.ArbitraryParenthesesSpacing" />
+
+    <rule ref="PEAR.Classes.ClassDeclaration" />
+    <rule ref="PEAR.Commenting.FunctionComment" />
+    <rule ref="PEAR.Commenting.FunctionComment.MissingParamComment"><severity>0</severity></rule>
+    <rule ref="PEAR.Commenting.FunctionComment.SpacingAfterParamName"><severity>0</severity></rule>
+    <rule ref="PEAR.Commenting.FunctionComment.SpacingAfterParamType"><severity>0</severity></rule>
+    <rule ref="PEAR.Commenting.FunctionComment.MissingReturn"><severity>0</severity></rule>
+    <rule ref="PEAR.Commenting.InlineComment" />
+    <rule ref="PEAR.ControlStructures.ControlSignature" />
+    <rule ref="PEAR.ControlStructures.ControlSignature.Found"><severity>0</severity></rule>
+    <rule ref="PEAR.ControlStructures.MultiLineCondition" />
+    <rule ref="PEAR.ControlStructures.MultiLineCondition.SpacingAfterOpenBrace"><severity>0</severity></rule>
+    <rule ref="PEAR.Functions.FunctionCallSignature" />
+    <rule ref="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"><severity>0</severity></rule>
+    <rule ref="PEAR.Functions.FunctionCallSignature.CloseBracketLine"><severity>0</severity></rule>
+    <rule ref="PEAR.Functions.FunctionCallSignature.Indent"><severity>0</severity></rule>
+    <rule ref="PEAR.Functions.FunctionCallSignature.SpaceAfterCloseBracket"><severity>0</severity></rule>
+    <rule ref="PEAR.Functions.FunctionDeclaration" />
+    <rule ref="PEAR.Functions.FunctionDeclaration.BraceOnSameLine"><severity>0</severity></rule>
+    <rule ref="PEAR.Functions.FunctionDeclaration.BraceIndent"><severity>0</severity></rule>
+    <rule ref="PEAR.Functions.FunctionDeclaration.SpaceAfterFunction"><severity>0</severity></rule>
+    <rule ref="PEAR.Functions.ValidDefaultValue" />
+    <rule ref="PEAR.NamingConventions.ValidFunctionName" />
+    <rule ref="PEAR.NamingConventions.ValidFunctionName.PrivateNoUnderscore"><severity>0</severity></rule>
+    <rule ref="PEAR.NamingConventions.ValidFunctionName.ScopeNotCamelCaps"><severity>0</severity></rule>
+
+    <rule ref="Squiz.Arrays.ArrayBracketSpacing" />
+    <rule ref="Squiz.Classes.SelfMemberReference" />
+    <rule ref="Squiz.Commenting.DocCommentAlignment" />
+    <rule ref="Squiz.Commenting.DocCommentAlignment.SpaceAfterStar"><severity>0</severity></rule>
+    <rule ref="Squiz.Commenting.FunctionCommentThrowTag" />
+    <rule ref="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis"><severity>0</severity></rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration" />
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.NoSpaceAfterArrow"><severity>0</severity></rule>
+
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration" />
+    <rule ref="Squiz.ControlStructures.LowercaseDeclaration" />
+    <rule ref="Squiz.Functions.LowercaseFunctionKeywords" />
+    <rule ref="Squiz.Functions.FunctionDeclaration.Found"><severity>0</severity></rule>
+    <rule ref="Squiz.Scope.MethodScope" />
+    <rule ref="Squiz.Scope.MemberVarScope" />
+    <rule ref="Squiz.Scope.StaticThisUsage" />
+    <rule ref="Squiz.Strings.EchoedStrings" />
+    <rule ref="Squiz.PHP.LowercasePHPFunctions" />
+    <rule ref="Squiz.PHP.Eval" />
+    <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing" />
+    <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing" />
+    <rule ref="Squiz.WhiteSpace.SemicolonSpacing" />
+
+    <rule ref="Zend.Files.ClosingTag" />
+    <rule ref="Zend.NamingConventions.ValidVariableName" />
+    <rule ref="Zend.NamingConventions.ValidVariableName.PrivateNoUnderscore"><severity>0</severity></rule>
+    <rule ref="Zend.NamingConventions.ValidVariableName.ContainsNumbers"><severity>0</severity></rule>
+
+    <rule ref="PersonalRules.Commenting.FunctionComment"><severity>0</severity></rule>
+    <rule ref="PersonalRules.Commenting.FunctionComment.Missing"><severity>0</severity></rule>
+    <rule ref="PersonalRules.Commenting.ClassComment.SpacingBeforeTags">
+        <message>There should always be a description, followed by a blank line, before the tags of a class comment.</message>
+    </rule>
+</ruleset>
