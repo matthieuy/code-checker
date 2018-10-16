@@ -91,7 +91,7 @@ function createWindow () {
   })
 
   // Load main window
-  mainWindow.loadURL(global.winURL)
+  mainWindow.loadURL(global.winURL + '/index.html')
 
   // Main menu
   let mainMenu = require('./system/menu').default
