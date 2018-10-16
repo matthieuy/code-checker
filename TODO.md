@@ -11,6 +11,5 @@ TODO List
   * [ ] Resume
 * [ ] PHPLOC :
   * [ ] Get stats of project
-* [ ] Deploy script
 * [ ] Translate
 * [ ] Readme

@@ -13,7 +13,7 @@ app.setAppUserModelId('com.matthieuy.code-checker')
 console.log('Environment: ', process.env.NODE_ENV)
 if (process.env.NODE_ENV !== 'production') {
   global.__static = `${path.join(__dirname, '../../static').replace(/\\/g, '\\\\')}`
-  global.winURL = 'http://localhost:9080'
+  global.winURL = 'http://localhost:9081'
 } else {
   global.__static = path.join(__dirname, '/static').replace(/\\/g, '\\\\')
   global.winURL = `file://${__dirname}`
@@ -91,7 +91,7 @@ function createWindow () {
   })
 
   // Load main window
-  mainWindow.loadURL(global.winURL)
+  mainWindow.loadURL(global.winURL + '/index.html')
 
   // Main menu
   let mainMenu = require('./system/menu').default

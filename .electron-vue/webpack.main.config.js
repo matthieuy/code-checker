@@ -65,7 +65,7 @@ if (process.env.NODE_ENV !== 'production') {
   mainConfig.plugins.push(
     new webpack.DefinePlugin({
       '__static': `"${path.join(__dirname, '../static').replace(/\\/g, '\\\\')}"`,
-      'process.env.winURL': '"http://localhost:9080"',
+      'process.env.winURL': '"http://localhost:9081"',
     })
   )
 }
